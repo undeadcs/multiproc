@@ -1,0 +1,7 @@
+<map id="multiproc\process\Managed" name="multiproc\process\Managed">
+<area shape="rect" id="node1" title="Managed process." alt="" coords="224,80,427,107"/>
+<area shape="rect" id="node3" href="$classmultiproc_1_1process_1_1Daemon.html" title="Daemon." alt="" coords="5,155,203,181"/>
+<area shape="rect" id="node4" href="$classmultiproc_1_1process_1_1External.html" title="External process wrapper for child process proc_get_status &#45; under the hood calls waitpid function." alt="" coords="227,155,423,181"/>
+<area shape="rect" id="node5" href="$classmultiproc_1_1process_1_1Forking.html" title="Forking process pid will be defined at start." alt="" coords="447,155,638,181"/>
+<area shape="rect" id="node2" href="$classmultiproc_1_1Process.html" title="Base process." alt="" coords="256,5,395,32"/>
+</map>

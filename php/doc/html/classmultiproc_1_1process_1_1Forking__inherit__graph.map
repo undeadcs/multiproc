@@ -1,0 +1,5 @@
+<map id="multiproc\process\Forking" name="multiproc\process\Forking">
+<area shape="rect" id="node1" title="Forking process pid will be defined at start." alt="" coords="11,155,202,181"/>
+<area shape="rect" id="node2" href="$classmultiproc_1_1process_1_1Managed.html" title="Managed process." alt="" coords="5,80,208,107"/>
+<area shape="rect" id="node3" href="$classmultiproc_1_1Process.html" title="Base process." alt="" coords="37,5,176,32"/>
+</map>

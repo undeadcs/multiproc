@@ -1,0 +1,5 @@
+<map id="multiproc\process\Daemon" name="multiproc\process\Daemon">
+<area shape="rect" id="node1" title="Daemon." alt="" coords="8,155,205,181"/>
+<area shape="rect" id="node2" href="$classmultiproc_1_1process_1_1Managed.html" title="Managed process." alt="" coords="5,80,208,107"/>
+<area shape="rect" id="node3" href="$classmultiproc_1_1Process.html" title="Base process." alt="" coords="37,5,176,32"/>
+</map>

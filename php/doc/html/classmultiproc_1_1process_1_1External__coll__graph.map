@@ -1,0 +1,6 @@
+<map id="multiproc\process\External" name="multiproc\process\External">
+<area shape="rect" id="node1" title="External process wrapper for child process proc_get_status &#45; under the hood calls waitpid function." alt="" coords="193,171,389,197"/>
+<area shape="rect" id="node2" href="$classmultiproc_1_1process_1_1Managed.html" title="Managed process." alt="" coords="189,95,392,121"/>
+<area shape="rect" id="node3" href="$classmultiproc_1_1Process.html" title="Base process." alt="" coords="5,5,144,32"/>
+<area shape="rect" id="node4" href="$classmultiproc_1_1ProcessStatus.html" title="Process status information utiliy class for information about process status after pcntl_waitpid/pcnt..." alt="" coords="275,5,453,32"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" title=" " alt="" coords="5,78,92,105"/>
+<area shape="rect" id="node2" href="$classmultiproc_1_1exceptions_1_1InvalidContext.html" title="Trying to call at invalid context." alt="" coords="140,5,299,47"/>
+<area shape="rect" id="node3" href="$classmultiproc_1_1exceptions_1_1PcntlLastError.html" title="Exception for PCNTL Functions." alt="" coords="140,71,299,112"/>
+<area shape="rect" id="node4" href="$classmultiproc_1_1exceptions_1_1ProcfsAccessDenied.html" title="Access denied when try to work with procfs." alt="" coords="140,136,299,177"/>
+</map>
