@@ -232,14 +232,14 @@ class Managed extends Process {
 	 * @return bool success of operation
 	 */
 	protected function UnbindSignal( int $signo ) : bool {
-		if ( !$this->IsCurrent( ) ) { // can unbind only in current context
+		if ( !$this->IsCurrent( ) || !pcntl_signal( $signo, SIG_DFL ) ) { // can unbind only in current context
 			return false;
 		}
 		if ( isset( $this->signalsHandlers[ $signo ] ) ) { // unbinding must work anyway
 			unset( $this->signalsHandlers[ $signo ] );
 		}
 		
-		return pcntl_signal( $signo, SIG_DFL );
+		return true;
 	}
 	
 	/**
