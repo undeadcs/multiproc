@@ -232,13 +232,14 @@ class Managed extends Process {
 	 * @return bool success of operation
 	 */
 	protected function UnbindSignal( int $signo ) : bool {
-		if ( isset( $this->signalsHandlers[ $signo ] ) && pcntl_signal( $signo, SIG_DFL ) ) {
+		if ( !$this->IsCurrent( ) || !pcntl_signal( $signo, SIG_DFL ) ) { // can unbind only in current context
+			return false;
+		}
+		if ( isset( $this->signalsHandlers[ $signo ] ) ) { // unbinding must work anyway
 			unset( $this->signalsHandlers[ $signo ] );
-			
-			return true;
 		}
 		
-		return false;
+		return true;
 	}
 	
 	/**
@@ -265,6 +266,16 @@ class Managed extends Process {
 	}
 	
 	/**
+	 * Child inherit some things from parent
+	 * 
+	 * @param Managed $child Child process
+	 */
+	protected function ChildInheritance( Managed $child ) : void {
+		$child->parentProc = $this; // parent-child linking
+		$child->signalsHandlers = $this->signalsHandlers; // signals handlers always inherited by child process
+	}
+	
+	/**
 	 * Start child process
 	 * common code for starting child process
 	 *
@@ -275,12 +286,11 @@ class Managed extends Process {
 		if ( !$this->IsCurrent( ) ) { // only at current context
 			return false;
 		}
-		
-		$child->parentProc = $this;
-		
-		if ( !isset( $this->signalsHandlers[ SIGCHLD ] ) ) { // force processing of signal
-			$this->BindSignalMethod( SIGCHLD, 'SigchldHandler' );
+		if ( !isset( $this->signalsHandlers[ SIGCHLD ] ) && !$this->BindSignalMethod( SIGCHLD, 'SigchldHandler' ) ) { // force processing of signal
+			return false;
 		}
+		
+		$this->ChildInheritance( $child );
 		
 		if ( $child->Start( ) ) {
 			$this->RegisterChild( $child );
